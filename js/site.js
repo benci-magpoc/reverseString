@@ -1,29 +1,44 @@
-function getMessage() {
-    let message = document.getElementById("txtMessage").value;
-    displayMessage(message);
+function getString() {
+    let message = document.getElementById("stringInput").value;
+
+    if (message != "") {
+        message = message.toLowerCase();
+        let reversedString = reverseStringB(message);
+        displayString(reversedString);
+    } else {
+        alert("Please input a valid string!");
+    }
 }
 
+//View model
+function displayString(message) {
 
-function displayMessage(message) {
-
-    // let item = `<li class="list-group-item">${message}</li>`;
-
-    // getting ol element from the page
     element = document.getElementById("results");
-
-    // create a new li element
-    let item = document.createElement("li");
-    //add class to the element
-    item.classList.add("list-group-item");
-    item.classList.add("messageClass");
-
-    //set the message for the li element
-    item.innerHTML = message;
-    // add new item to list
+    element.innerHTML = message;
     element.appendChild(item);
 
+}
 
-    // element.insertAdjacentHTML("beforeend", item);
-    let clearForm = document.getElementById("txtMessage");
-    clearForm.innerHTML = "";
+//function to reverse string
+function reverseString(message) {
+    let reversedString = "";
+
+    for (i = message.length - 1; i >= 0; i--) {
+        let char = message[i];
+        //concatenante reversedString with the character from the index of message
+        reversedString += char;
+        //convert to lower caps
+    }
+    console.log(reversedString);
+    console.log(message);
+    return reversedString;
+}
+
+//algorithm using built in functions
+function reverseStringB(message) {
+    let reversedString = "";
+
+    reversedStringArray = message.split("");
+    reversedString = reversedStringArray.reverse().join("");
+    return reversedString;
 }
