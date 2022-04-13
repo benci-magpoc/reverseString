@@ -42,7 +42,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
                 <span><img src="/img/portfolioLogoLight.png" height="25" alt=""></span>
-                APP NAME
+                Reverse a String
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,45 +72,71 @@
 
     <main class="flex-shrink-0 py-3">
         <div class="container mt-5">
-            <h1>THE CODE FOR:</h1>
+            <h1>THE CODE FOR: Reverse a String</h1>
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
                             
-                            function getMessage() {
-                                let message = document.getElementById("txtMessage").value;
-                                myFunction(message);
+                            //input processing
+                            function getString() {
+                                let message = document.getElementById("stringInput").value;
+
+                                if (message != "") {
+                                    message = message.toLowerCase();
+                                    let reversedString = reverseStringB(message);
+                                    displayString(reversedString);
+                                } else {
+                                    alert("Please input a valid string!");
+                                }
                             }
-                            
-                            
-                            function myFunction(message) {
-                            
-                                // getting ol element from the page
+
+                            //View model
+                            function displayString(message) {
+
                                 element = document.getElementById("results");
-                            
-                                // create a new li element
-                                let item = document.createElement("li");
-                                //add class to the element
-                                item.classList.add("list-group-item");
-                                item.classList.add("messageClass");
-                            
-                                //set the message for the li element
-                                item.innerHTML = message;
-                                // add new item to list
+                                let item = document.createElement("div");
+                                item.classList.add("resultsText");
+                                item.innerHTML = `Your input in reverse is: ${message}`;
                                 element.appendChild(item);
-                                                        
+
+                            }
+
+                            //algorithm using string concatenation
+                            function reverseString(message) {
+                                let reversedString = "";
+
+                                for (i = message.length - 1; i >= 0; i--) {
+                                    let char = message[i];
+                                    //concatenante reversedString with the character from the index of message
+                                    reversedString += char;
+                                    //convert to lower caps
+                                }
+                                console.log(reversedString);
+                                console.log(message);
+                                return reversedString;
+                            }
+
+                            //algorithm using built in functions
+                            function reverseStringB(message) {
+                                let reversedString = "";
+
+                                reversedStringArray = message.split("");
+                                reversedString = reversedStringArray.reverse().join("");
+                                return reversedString;
                             }
                         </code>
                     </pre>
 
                 </div>
                 <div class="col-12 col-lg-4">
-                    <p>The code is structured in two functions</p>
-                    <h5>getMessage</h5>
-                    <p>Gets values from the user.</p>
-                    <h5>displayMessage</h5>
-                    <p>Displays the items on the page.</p>
+                    <p>The code is structured in three functions</p>
+                    <h5>getString</h5>
+                    <p>Gets string input from the user.</p>
+                    <h5>reverseString</h5>
+                    <p>The main logic of the app which reverses the string.</p>
+                    <h5>displayString</h5>
+                    <p>The function to display the result.</p>
                 </div>
             </div>
         </div>
@@ -123,7 +149,7 @@
                     <span>&copy; 2022</span> Benci Magpoc | benciian@gmail.com
                 </div>
                 <div class="col d-flex justify-content-start justify-content-lg-center align-items-center">
-                    <a href="https://benci-magpoc.github.io/Portfolio/" target="_blank">
+                    <a href="https://benci-magpoc-portfolio.netlify.app/" target="_blank">
                         <img src="/img/portfolioLogoLight.png" height="40">
                     </a>
                 </div>

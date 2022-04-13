@@ -40,7 +40,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
                 <span><img src="/img/portfolioLogoLight.png" height="25" alt=""></span>
-                APP NAME
+                Reverse a String
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,20 +70,36 @@
 
     <main class="flex-shrink-0 py-3">
         <div class="container mt-5">
-            <h1>Reverse a String</h1>
-            <div class="row align-items-end">
+
+            <div class="row row-cols-1 row-cols-md-2">
                 <div class="col">
-                    <label for="txtMessage" class="form-label" id="inputLabel">Input</label>
-                    <input type="text" class="form-control" id="stringInput" value="Benci">
+                    <h1>Reverse a String</h1>
+                    <p>This coding challenge takes an input from users and evaluates whether the input field is empty.
+                        If the field is empty, it will return a message so until it gets an input that is not empty.</p>
+                    <p>After the string is evaluated being valid, the app returns the input string in reverse.</p>
+                    <h3>Instructions</h3>
+                    <p>Input a string. It can be a word, phrase, numbers, or anything and the app will return the
+                        reverse of it in all lowercase.</p>
                 </div>
+
                 <div class="col">
-                    <button id="btnSubmit" class="btn btn-lg btn-primary">Reverse Me!</button>
+                    <div class="row row-cols-1 row-cols-md-2">
+                        <div class="col-12 col-md-8">
+                            <label for="txtMessage" class="form-label" id="inputLabel">Input</label>
+                            <input type="text" class="form-control" id="stringInput" value=""
+                                placeholder="Enter something.">
+                        </div>
+                        <div class="col-12 col-md-4 pt-4 text-md-end">
+                            <button id="btnSubmit" class="btn btn-md btn-primary">Reverse Me!</button>
+                        </div>
+                    </div>
+                    <div class="col mt-5">
+                        <ol id="results" class="list-group list-group-numbered">
+                            <!-- Items will go here -->
+                        </ol>
+                    </div>
                 </div>
-            </div>
-            <div class=" mt-5">
-                <ol id="results" class="list-group list-group-numbered">
-                    <!-- Items will go here -->
-                </ol>
+
             </div>
         </div>
     </main>

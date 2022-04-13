@@ -1,3 +1,4 @@
+//input processing
 function getString() {
     let message = document.getElementById("stringInput").value;
 
@@ -14,12 +15,14 @@ function getString() {
 function displayString(message) {
 
     element = document.getElementById("results");
-    element.innerHTML = message;
+    let item = document.createElement("div");
+    item.classList.add("resultsText");
+    item.innerHTML = `Your input in reverse is: ${message}`;
     element.appendChild(item);
 
 }
 
-//function to reverse string
+//algorithm using string concatenation
 function reverseString(message) {
     let reversedString = "";
 

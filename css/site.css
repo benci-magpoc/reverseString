@@ -81,9 +81,10 @@ footer img:hover {
 
 }
 
-.messageClass {
-    color: var(--cf-orange);
-    font-size: 1rem;
+.resultsText {
+    color: rgb(205, 69, 31);
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 @media (min-width: 575.98px) {
